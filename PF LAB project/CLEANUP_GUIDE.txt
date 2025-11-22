@@ -1,0 +1,146 @@
+================================================================================
+                          PROJECT CLEANUP CHECKLIST
+================================================================================
+
+The following files and folders should be DELETED from the project to keep it
+clean and remove unnecessary clutter. Only keep essential files.
+
+SAFE TO DELETE:
+================
+
+Old Build Artifacts:
+├─ build/CMakeCache.txt - Old CMake configuration
+├─ build/CMakeFiles/ - Old CMake build files
+├─ build/CMakeScratch/ - CMake scratch files
+├─ build/pkgRedirects/ - CMake package redirects
+├─ build/Makefile - Old CMake-generated Makefile
+├─ build/cmake_install.cmake - Old CMake installer
+├─ build/compile.sh - This can be kept or deleted (used to compile)
+
+Old C Build Files (if present):
+├─ *.o - Object files
+├─ CMakeLists.txt - Old CMake configuration (can be deleted)
+
+Unused Scripts/Helpers:
+├─ rotate.ps1 - Used for rotating images; can be kept or deleted
+├─ rotate.bat - Wrapper for rotate.ps1; can be kept or deleted
+
+Unused Image Files (OLD VERSION - REPLACED):
+├─ assets/car.png - Replaced by car_rotated.png; DELETE
+├─ assets/background.png - Replaced by background-1.png; DELETE
+├─ assets/obstacle.png - Not used (variants used instead); DELETE
+
+PyInstaller Artifacts (if .exe was generated from Python):
+├─ build/ folder (dist/ in Python projects) - DELETE after exe created
+├─ *.spec file - PyInstaller spec file; DELETE
+├─ __pycache__/ - Python cache; DELETE
+
+Leftover Files:
+├─ Any .bak or backup files - DELETE
+├─ Any test_*.c or debug_*.c files - DELETE
+├─ old_game.c or similar versioned files - DELETE
+├─ *.tmp or temporary files - DELETE
+
+KEEP THESE ESSENTIAL FILES:
+===========================
+
+Source Code:
+├─ src/main.c - Entry point
+├─ src/game.c - Game logic
+├─ src/player.c - Player physics
+├─ src/obstacle.c - Obstacle management
+├─ src/graphics.c - Graphics utilities
+├─ include/game.h - Headers
+├─ include/player.h
+├─ include/obstacle.h
+├─ include/graphics.h
+
+Build System:
+├─ build/compile.sh - Bash build script (used to compile)
+├─ build/car_game.exe - Compiled executable (FINAL PRODUCT)
+├─ rebuild_and_test.bat - Rebuild helper (optional, can delete)
+
+Game Assets:
+├─ assets/car_rotated.png - Player car sprite
+├─ assets/obj_bags1.png - Obstacle variant
+├─ assets/obj_barrel1.png - Obstacle variant
+├─ assets/obj_barrel2.png - Obstacle variant
+├─ assets/obj_barrels.png - Obstacle variant
+├─ assets/background-1.png - Scrolling background
+
+Documentation & Configuration:
+├─ PROGRAM_EXPLANATION.txt - Game documentation
+├─ highscore.txt - Persisted high score (created on first game over)
+
+Shortcuts:
+├─ Car Game.lnk - Desktop shortcut to launch game (OPTIONAL)
+
+CLEANUP PROCESS:
+================
+
+Step 1: Close the game if running
+Step 2: Delete old build artifacts:
+   - Delete entire build/CMakeFiles/ folder
+   - Delete build/CMakeScratch/ folder
+   - Delete build/pkgRedirects/ folder
+   - Delete build/CMakeCache.txt
+   - Delete build/Makefile
+   - Delete build/cmake_install.cmake
+
+Step 3: Delete old image files:
+   - Delete assets/car.png
+   - Delete assets/background.png
+   - Delete assets/obstacle.png
+
+Step 4: (Optional) Delete helper scripts if not needed:
+   - Delete rotate.ps1
+   - Delete rotate.bat
+   - Delete rebuild_and_test.bat
+
+Step 5: Verify essential files remain:
+   - src/ folder with 5 C files
+   - include/ folder with 4 header files
+   - assets/ folder with 6 PNG files
+   - build/car_game.exe exists and is current
+
+Step 6: Test that everything still works:
+   - Double-click Car Game.lnk or run build/car_game.exe
+   - Play a quick game to verify all features work
+
+FINAL PROJECT STRUCTURE AFTER CLEANUP:
+======================================
+
+PF LAB project/
+├── src/
+│   ├── main.c
+│   ├── game.c
+│   ├── player.c
+│   ├── obstacle.c
+│   └── graphics.c
+├── include/
+│   ├── game.h
+│   ├── player.h
+│   ├── obstacle.h
+│   └── graphics.h
+├── build/
+│   ├── compile.sh
+│   └── car_game.exe
+├── assets/
+│   ├── car_rotated.png
+│   ├── obj_bags1.png
+│   ├── obj_barrel1.png
+│   ├── obj_barrel2.png
+│   ├── obj_barrels.png
+│   └── background-1.png
+├── PROGRAM_EXPLANATION.txt
+├── highscore.txt (created after first game over)
+└── Car Game.lnk (optional, on Desktop)
+
+This is a clean, minimal project structure with:
+- No build artifacts
+- No old/unused files
+- Only essential source and assets
+- Final working executable
+- Documentation for reference
+
+================================================================================
